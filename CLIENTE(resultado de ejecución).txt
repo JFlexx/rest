@@ -1,0 +1,67 @@
+Añadir usuario a la red de lectura.: 
+	EntidadXml: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><usuarios><usuario name="Pepe" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1"/><usuario name="Jason" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/2"/><usuario name="Henry" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/3"/><usuario name="Jason" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/4"/></usuarios>
+JSON:{"users":[{"name":"Pepe","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1"},{"name":"Jason","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/2"},{"name":"Henry","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/3"},{"name":"Jason","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/4"}]}
+-------------------------------------------------------------------------
+Obteiene los datos básicos del usuario:
+XML=<?xml version="1.0" encoding="UTF-8" standalone="yes"?><user id="1"><correo>pepe@gmail.com</correo><edad>21</edad><name>Pepe</name><userName>Pepe99</userName></user>
+JSON={"ID":1,"correo":"pepe@gmail.com","edad":21,"name":"Pepe","userName":"Pepe99"}
+-------------------------------------------------------------------------
+Obtiene un listado con todos los usuarios filtrado por nombre: 
+XML=<?xml version="1.0" encoding="UTF-8" standalone="yes"?><usuarios><usuario name="Jason" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/2"/><usuario name="Jason" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/4"/></usuarios>
+JSON={"users":[{"name":"Jason","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/2"},{"name":"Jason","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/4"}]}
+-------------------------------------------------------------------------
+Cambiar Datos básicos de un Usuario menos el nombre de Usuario(name(String),correo(String),edad(int)): 
+XML=<?xml version="1.0" encoding="UTF-8" standalone="yes"?><usuarios><usuario name="Jason" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1"/><usuario name="Jason" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/2"/><usuario name="Henry" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/3"/><usuario name="Jason" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/4"/></usuarios>
+JSON=<?xml version="1.0" encoding="UTF-8" standalone="yes"?><usuarios><usuario name="Jason" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1"/><usuario name="Jason" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/2"/><usuario name="Henry" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/3"/><usuario name="Jason" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/4"/></usuarios>
+Obtiene un listado con todos los usuarios: 
+XML=<?xml version="1.0" encoding="UTF-8" standalone="yes"?><usuarios><usuario name="Jason" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1"/><usuario name="Jason" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/2"/><usuario name="Henry" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/3"/><usuario name="Jason" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/4"/></usuarios>
+JSON{"users":[{"name":"Jason","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1"},{"name":"Jason","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/2"},{"name":"Henry","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/3"},{"name":"Jason","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/4"}]}
+-------------------------------------------------------------------------
+Borra a usuario de la red de lectura:
+XML=<?xml version="1.0" encoding="UTF-8" standalone="yes"?><usuarios><usuario name="Jason" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1"/><usuario name="Jason" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/2"/><usuario name="Henry" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/3"/></usuarios>
+JSON={"users":[{"name":"Jason","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1"},{"name":"Jason","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/2"},{"name":"Henry","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/3"}]}
+-------------------------------------------------------------------------
+Añade Una lectura de un libro por un usuario:
+XML=<?xml version="1.0" encoding="UTF-8" standalone="yes"?><lectura><lecturas date="2004-02-05" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/1"/><lecturas date="2004-04-05" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/2"/><lecturas date="2010-03-05" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/8"/><lecturas date="2010-03-05" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/9"/><lecturas date="2021-04-25" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/10"/></lectura>
+JSON={"lecturas":[{"date":"2004-02-05","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/lectura/1"},{"date":"2004-04-05","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/lectura/2"},{"date":"2010-03-05","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/lectura/8"},{"date":"2010-03-05","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/lectura/9"},{"date":"2021-04-25","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/lectura/10"}]}
+-------------------------------------------------------------------------
+-Borra La Lectura de un usuario:
+XML=<?xml version="1.0" encoding="UTF-8" standalone="yes"?><lectura><lecturas date="2004-02-05" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/1"/><lecturas date="2004-04-05" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/2"/><lecturas date="2010-03-05" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/8"/><lecturas date="2010-03-05" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/9"/><lecturas date="2021-04-25" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/10"/></lectura>
+JSON={"lecturas":[{"date":"2004-02-05","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/lectura/1"},{"date":"2004-04-05","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/lectura/2"},{"date":"2010-03-05","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/lectura/8"},{"date":"2010-03-05","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/lectura/9"},{"date":"2021-04-25","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/lectura/10"}]}
+-------------------------------------------------------------------------
+-Edita la lectura de un libro:
+XML=<?xml version="1.0" encoding="UTF-8" standalone="yes"?><lectura fechaLectura="2021-04-25T21:01:08.509+02:00" idLectura="8"><autor>Federico</autor><calificacion>10</calificacion><categoria>Novela</categoria><idLect>1</idLect></lectura>
+JSON={"autor":"Federico","calificacion":10,"categoria":"Novela","fechaLectura":"2021-04-25T19:01:08.526Z[UTC]","idLect":1,"idLectura":8}
+-------------------------------------------------------------------------
+-Consulta libro leidos por un usuario, se puede filtrar por fecha 
+	Consulta Normal de lectura del usuario -->
+XML=<?xml version="1.0" encoding="UTF-8" standalone="yes"?><lectura><lecturas date="2004-02-05" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/1"/><lecturas date="2004-04-05" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/2"/><lecturas date="2021-04-25" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/8"/><lecturas date="2010-03-05" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/9"/><lecturas date="2021-04-25" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/10"/></lectura>
+JSON={"lecturas":[{"date":"2004-02-05","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/lectura/1"},{"date":"2004-04-05","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/lectura/2"},{"date":"2021-04-25","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/lectura/8"},{"date":"2010-03-05","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/lectura/9"},{"date":"2021-04-25","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/lectura/10"}]}
+	Consulta usando filtro por fecha de lectura del usuario -->
+XML<?xml version="1.0" encoding="UTF-8" standalone="yes"?><lectura><lecturas date="2004-02-05" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/1"/><lecturas date="2004-04-05" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/2"/><lecturas date="2010-03-05" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/9"/></lectura>
+JSON<?xml version="1.0" encoding="UTF-8" standalone="yes"?><lectura><lecturas date="2004-02-05" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/1"/><lecturas date="2004-04-05" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/2"/><lecturas date="2010-03-05" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/9"/></lectura>
+-------------------------------------------------------------------------
+-Consulta información del libro del usuario
+XML=<?xml version="1.0" encoding="UTF-8" standalone="yes"?><lectura fechaLectura="2021-04-25T21:01:08.649+02:00" idLectura="1"><autor>Cervantez</autor><calificacion>5</calificacion><categoria>Novela</categoria><idLect>1</idLect></lectura>
+JSON={"autor":"Cervantez","calificacion":5,"categoria":"Novela","fechaLectura":"2021-04-25T19:01:08.665Z[UTC]","idLect":1,"idLectura":1}
+-------------------------------------------------------------------------
+-Añade amigo a la red de lectura:
+XML=<?xml version="1.0" encoding="UTF-8" standalone="yes"?><usuarios><usuario rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/2/amigos/1"/><usuario rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/2/amigos/3"/></usuarios>
+JSON={"users":[{"rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/2/amigos/1"},{"rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/2/amigos/3"}]}
+-------------------------------------------------------------------------
+-Elimina un amigo de tu lista de amistad:
+XML=<?xml version="1.0" encoding="UTF-8" standalone="yes"?><usuarios><usuario rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/amigos/2"/><usuario rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/amigos/3"/></usuarios>
+JSON={"users":[{"rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/amigos/2"},{"rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/amigos/3"}]}
+-------------------------------------------------------------------------
+-Consigue la lista de amigos, se puede filtrar limitando la cantidad de información(limite): 
+XML=<?xml version="1.0" encoding="UTF-8" standalone="yes"?><usuarios><usuario rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/amigos/2"/><usuario rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/amigos/3"/></usuarios>
+JSON={"users":[{"rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/amigos/2"},{"rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/amigos/3"}]}
+-------------------------------------------------------------------------
+-Devolverá las recomendaciones de libros de amigos, filtros(calificacion,autor,categoria): 
+XML=<?xml version="1.0" encoding="UTF-8" standalone="yes"?><recomendaciones><recomendacion autor="Charles" calificaciones="10" categoria="Novela" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/amigos/recomendaciones/5"/></recomendaciones>
+XML={"recomendacion":[{"autor":"Charles","calificaciones":10,"categoria":"Novela","rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/amigos/recomendaciones/5"}]}
+-------------------------------------------------------------------------
+-Devuelve aplicación móvil: 
+XML=<?xml version="1.0" encoding="UTF-8" standalone="yes"?><movil><amigos>2</amigos><LibrosAmigos idAmigo="2" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/2/lectura/4"/><LibrosAmigos idAmigo="3" rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/3/lectura/5"/><ultimoLibro rel="self" href="http://localhost:8080/RESTFUL/api/usuarios/1/lectura/10"/><user id="1"><correo>Jason@gmail.com</correo><edad>29</edad><name>Jason</name><userName>Pepe99</userName></user></movil>
+JSON={"amigos":2,"listaLectura":[{"idAmigo":2,"rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/2/lectura/4"},{"idAmigo":3,"rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/3/lectura/5"}],"ultimoLibro":[{"rel":"self","url":"http://localhost:8080/RESTFUL/api/usuarios/1/lectura/10"}],"user":{"ID":1,"correo":"Jason@gmail.com","edad":29,"name":"Jason","userName":"Pepe99"}}
+-------------------------------------------------------------------------
